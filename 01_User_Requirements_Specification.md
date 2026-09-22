@@ -195,44 +195,60 @@ method chosen).
 
 Source file: [`diagrams/use_case_diagram.puml`](diagrams/use_case_diagram.puml)
 
-```mermaid
-flowchart LR
-    Customer[Customer]
-    Kitchen[Kitchen Staff]
-    Manager[Store Manager]
-    PayNow[PayNow Gateway]
-    Card[Credit Card Gateway]
-    BI[Power BI / Tableau]
+```plantuml
+@startuml Grill_and_Go_Use_Case_Diagram
+left to right direction
+skinparam packageStyle rectangle
 
-    subgraph System["Grill & Go Digital Ordering and Fulfillment System"]
-        Access((Access Mobile Menu))
-        Browse((Browse Menu))
-        Customise((Customise Order))
-        Place((Place Order))
-        Pay((Process Payment))
-        KitchenView((View Paid Orders))
-        Status((Update Order Status))
-        Stock((Update Menu Availability))
-        Report((Provide Transactional Data))
+actor "Customer" as Customer
+actor "Kitchen Staff" as Kitchen
+actor "Store Manager" as Manager
+actor "Uncle Bob\n(Business Owner)" as Owner
 
-        Place -. "<<include>>" .-> Customise
-        Place -. "<<include>>" .-> Pay
-        Pay -. "<<include>>" .-> PaymentValidation((Validate Payment))
-    end
+actor "PayNow Gateway" as PayNow <<system>>
+actor "Credit Card Gateway" as CardGW <<system>>
+actor "Power BI / Tableau" as BI <<system>>
 
-    Customer --> Access
-    Customer --> Browse
-    Customer --> Customise
-    Customer --> Place
+rectangle "Grill & Go Digital Ordering System" {
+  usecase "Scan Table QR Code" as UC1
+  usecase "Browse Digital Menu" as UC2
+  usecase "Customize Order\n(sides, doneness)" as UC3
+  usecase "Place Order" as UC4
+  usecase "Make Payment" as UC5
+  usecase "Process PayNow Payment" as UC5a
+  usecase "Process Card Payment" as UC5b
+  usecase "View Order Status" as UC6
+  usecase "View Incoming Paid Orders\n(KDS)" as UC7
+  usecase "Update Order Status\n(Pending/Preparing/Ready)" as UC8
+  usecase "Toggle Menu Item\nOut of Stock" as UC9
+  usecase "View Sales & Peak-Hour\nAnalytics" as UC10
+  usecase "Extract Transactional Data" as UC11
+}
 
-    Kitchen --> KitchenView
-    Kitchen --> Status
+Customer --> UC1
+Customer --> UC2
+Customer --> UC3
+Customer --> UC4
+Customer --> UC6
 
-    Manager --> Stock
-    BI --> Report
+Kitchen --> UC7
+Kitchen --> UC8
 
-    Pay --> PayNow
-    Pay --> Card
+Manager --> UC9
+Owner --> UC10
+
+UC4 ..> UC3 : <<include>>
+UC4 ..> UC5 : <<include>>
+UC5 ..> UC5a : <<extend>>
+UC5 ..> UC5b : <<extend>>
+UC5a --> PayNow
+UC5b --> CardGW
+
+UC7 ..> UC4 : <<include>>
+UC10 ..> UC11 : <<include>>
+UC11 --> BI
+
+@enduml
 ```
 
 ### 3.1 Use Case Descriptions (Summary Table)
