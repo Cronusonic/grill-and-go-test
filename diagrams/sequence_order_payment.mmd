@@ -1,0 +1,51 @@
+sequenceDiagram
+    autonumber
+    actor C as Customer
+    participant SPA as Customer Web App
+    participant API as API Backend
+    participant DB as Transactional DB
+    participant PN as PayNow Gateway
+    participant KDS as KDS (Kitchen Tablet)
+    actor K as Kitchen Staff
+
+    C->>SPA: Scan table QR code
+    SPA->>API: GET /api/v1/menu?table_id=T12
+    API->>DB: SELECT available menu_items
+    DB-->>API: Menu item list
+    API-->>SPA: 200 OK (menu JSON)
+    SPA-->>C: Render menu
+
+    C->>SPA: Customize order (sides, doneness) & confirm
+    SPA->>API: POST /api/v1/orders (status=PENDING_PAYMENT)
+    API->>DB: INSERT orders, order_items
+    DB-->>API: order_id
+    API-->>SPA: 201 Created {order_id, amount_due}
+
+    SPA->>API: POST /api/v1/orders/{order_id}/payment (method=PAYNOW)
+    API->>PN: Create PayNow QR charge request
+    PN-->>API: SGQR payload / payment_ref
+    API-->>SPA: 200 OK {qr_code, payment_ref}
+    SPA-->>C: Display PayNow QR code
+
+    C->>PN: Scan & pay via banking app
+    PN-->>API: Webhook: payment.succeeded (payment_ref)
+    API->>DB: UPDATE payments SET status=PAID
+    API->>DB: UPDATE orders SET status=PAID
+
+    Note over API,KDS: Only PAID orders are transmitted to kitchen
+    API->>KDS: Push new order (WebSocket) / KDS polls GET /api/v1/kds/orders
+    KDS-->>K: Display new order (status=Pending)
+
+    SPA->>API: GET /api/v1/orders/{order_id}/status (poll)
+    API-->>SPA: 200 OK {status: PAID / PENDING}
+    SPA-->>C: Show "Payment confirmed, order sent to kitchen"
+
+    K->>KDS: Mark order "Preparing"
+    KDS->>API: PATCH /api/v1/orders/{order_id}/status {status: PREPARING}
+    API->>DB: UPDATE orders SET status=PREPARING
+
+    K->>KDS: Mark order "Ready for Pickup"
+    KDS->>API: PATCH /api/v1/orders/{order_id}/status {status: READY}
+    API->>DB: UPDATE orders SET status=READY
+    API-->>SPA: (poll/notify) status=READY
+    SPA-->>C: "Your order is ready for pickup"
