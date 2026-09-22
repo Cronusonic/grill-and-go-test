@@ -1,0 +1,51 @@
+erDiagram
+    TABLES ||--o{ ORDERS : "is seated for"
+    ORDERS ||--|{ ORDER_ITEMS : "contains"
+    MENU_ITEMS ||--o{ ORDER_ITEMS : "ordered as"
+    ORDERS ||--|| PAYMENTS : "settled by"
+
+    TABLES {
+        int table_id PK
+        varchar table_number
+        varchar qr_code_url
+        boolean is_active
+    }
+
+    ORDERS {
+        int order_id PK
+        int table_id FK
+        varchar status "PENDING_PAYMENT|PAID|PREPARING|READY|COMPLETED|CANCELLED"
+        decimal total_amount
+        datetime created_at
+        datetime updated_at
+    }
+
+    ORDER_ITEMS {
+        int order_item_id PK
+        int order_id FK
+        int item_id FK
+        int quantity
+        varchar customizations "e.g. doneness=medium, side=fries"
+        decimal unit_price
+        decimal subtotal
+    }
+
+    MENU_ITEMS {
+        int item_id PK
+        varchar name
+        varchar description
+        decimal price
+        varchar category
+        boolean is_available
+        datetime updated_at
+    }
+
+    PAYMENTS {
+        int payment_id PK
+        int order_id FK
+        varchar method "PAYNOW|CREDIT_CARD"
+        decimal amount
+        varchar status "INITIATED|PAID|FAILED|REFUNDED"
+        varchar transaction_ref
+        datetime paid_at
+    }
