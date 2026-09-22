@@ -1,0 +1,22 @@
+C4Context
+  title Grill & Go — System Context Diagram (C1)
+
+  Person(customer, "Customer", "Diner at a table, orders via mobile browser after scanning a table QR code")
+  Person(kitchen, "Kitchen Staff", "Prepares food, updates order status on a tablet (KDS)")
+  Person(manager, "Store Manager", "Manages menu availability and stock in real time")
+  Person(owner, "Uncle Bob", "Business owner, reviews sales & peak-hour performance")
+
+  System(orderingSystem, "Grill & Go Ordering System", "Allows customers to browse the menu, customize and pay for orders; lets kitchen staff fulfil orders and managers control stock availability")
+
+  System_Ext(paynow, "PayNow Gateway", "SGQR-based instant payment processor")
+  System_Ext(cardGateway, "Credit Card Gateway", "PCI-DSS compliant card payment processor (e.g. Stripe)")
+  System_Ext(biTool, "Power BI / Tableau", "Off-the-shelf BI tool connecting directly to the transactional database for revenue & peak-hour reporting")
+
+  Rel(customer, orderingSystem, "Scans QR, browses menu, customizes & pays for order", "HTTPS / Mobile Browser")
+  Rel(kitchen, orderingSystem, "Views paid orders, updates status", "HTTPS / Tablet (KDS)")
+  Rel(manager, orderingSystem, "Toggles item availability", "HTTPS / Tablet or Web")
+  Rel(orderingSystem, owner, "Surfaces sales summaries (via BI tool)")
+
+  Rel(orderingSystem, paynow, "Initiates & confirms PayNow payment", "REST/Webhook")
+  Rel(orderingSystem, cardGateway, "Initiates & confirms card payment", "REST/Webhook")
+  Rel(biTool, orderingSystem, "Reads transactional/reporting data directly", "ODBC / Read Replica")
