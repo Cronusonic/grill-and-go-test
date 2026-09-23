@@ -23,7 +23,7 @@ integration (Power BI / Tableau) against the transactional database.
 | :--- | :--- | :--- | :--- |
 | `@studentA-analyst` | [Student A Name] | Lead Systems Analyst | User Requirements Specification, User Stories, Use Case Diagram, Client Sign-Off, RTM |
 | `@studentB-developer` | [Student B Name] | Software Architect / Lead Developer | C4 Architecture (C1/C2), Sequence Diagram, API Specifications |
-| `@studentC-qa` | [Student C Name] | Integration & BI Specialist | Database Schema (ERD), NFRs, Power BI integration notes, QA review of both documents |
+| `@studentA-qa` | [Student A Name] | Integration & BI Specialist | Database Schema (ERD), NFRs, Power BI integration notes, QA review of both documents |
 
 > Each member commits under their own distinct Git account. Commit history
 > is used for individual moderation per the module's Git Commit Audit policy.
