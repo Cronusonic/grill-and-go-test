@@ -169,56 +169,6 @@ sequenceDiagram
 
 Source file: [`diagrams/erd_database_schema.mmd`](diagrams/erd_database_schema.mmd)
 
-```mermaid
-erDiagram
-    TABLES ||--o{ ORDERS : receives
-    ORDERS ||--|{ ORDER_ITEMS : contains
-    MENU_ITEMS ||--o{ ORDER_ITEMS : appears_in
-    ORDERS ||--o{ PAYMENTS : has
-
-    TABLES {
-        bigint table_id PK
-        varchar table_code UK
-        varchar status
-    }
-
-    ORDERS {
-        bigint order_id PK
-        bigint table_id FK
-        varchar status
-        decimal total_amount
-        timestamp created_at
-        timestamp updated_at
-    }
-
-    ORDER_ITEMS {
-        bigint order_item_id PK
-        bigint order_id FK
-        bigint menu_item_id FK
-        integer quantity
-        decimal unit_price
-        jsonb customisations
-    }
-
-    MENU_ITEMS {
-        bigint menu_item_id PK
-        varchar name
-        text description
-        decimal price
-        boolean is_available
-        timestamp updated_at
-    }
-
-    PAYMENTS {
-        bigint payment_id PK
-        bigint order_id FK
-        varchar payment_method
-        varchar payment_status
-        decimal amount
-        varchar gateway_reference
-        timestamp paid_at
-    }
-```
 
 ```mermaid
 erDiagram
