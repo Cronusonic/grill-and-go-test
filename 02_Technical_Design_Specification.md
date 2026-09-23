@@ -370,4 +370,4 @@ to 30,000 monthly transactions, and approved for implementation.
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Lead Systems Analyst** | [Student A Name] | Systems Analyst / Author | **APPROVED** | 2026-10-12 16:00 | `@studentA-analyst` |
 | **Lead Software Engineer** | [Student B Name] | Software Architect / Lead Developer | **APPROVED** | 2026-10-12 16:15 | `@studentB-developer` |
-| **QA & Data Engineer** | [Student C Name] | Integration & BI Specialist | **APPROVED** | 2026-10-12 16:30 | `@studentC-qa` |
+| **QA & Data Engineer** | [Student A Name] | Integration & BI Specialist | **APPROVED** | 2026-10-12 16:30 | `@studentA-qa` |
