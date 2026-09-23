@@ -191,6 +191,7 @@ Credit Card Gateway, Power BI/Tableau), the functional use cases, and the
 Order" **includes** "Make Payment"; "Make Payment" **extends** to either
 "Process PayNow Payment" or "Process Card Payment" depending on the
 method chosen).
+
 <img width="1348" height="865" alt="image" src="https://github.com/user-attachments/assets/11f4a82c-4f49-4fb3-b5f1-1c08460975c6" />
 
 Source file: [`diagrams/use_case_diagram.puml`](diagrams/use_case_diagram.puml)
