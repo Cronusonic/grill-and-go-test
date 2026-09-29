@@ -77,6 +77,7 @@ The diagram maps the internal technology stack, container architecture, and exte
     A PostgreSQL database responsible for storing primary data structures, including tables for orders, order items, menu items, and payments
   - Reporting Read Replica:
     A secondary PostgreSQL database that continuously streams a replica from the Transactional Database. It is designed to isolate heavy business intelligence (BI) query loads from live transactional traffic.
+    
 Source file: [`diagrams/c2_container_diagram.mmd`](diagrams/c2_container_diagram.mmd)
 
 ```mermaid
