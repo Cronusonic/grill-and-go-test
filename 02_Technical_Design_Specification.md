@@ -12,8 +12,26 @@
 
 ### 1.1 C1 — System Context Diagram
 
-Shows the system boundary, the human actors, and the external systems it
-integrates with (PayNow Gateway, Credit Card Gateway, Power BI/Tableau).
+The diagram maps the architectural boundaries, user roles, and external software integrations for the Grill & Go Ordering System.
+- Primary Software System
+  - Grill & Go Ordering System:
+    The central application that enables customers to browse menus and pay, allows kitchen staff to process orders, and provides managers with stock control or inventory capabilities.
+- Human Users
+  - Customer:
+    Diners who access the platform via mobile browser by scanning table QR code to view the menu, customize their selections, and execute payments via HTTPS.
+  - Kitchen Staff:
+    Personnel who use a tablet-based Kitchen Display System (KDS) via HTTPS to view incoming paid orders and update preparation statuses.
+  - Store Manager:
+    Operational leaders who access the system via tablet or web interface (HTTPS) to toggle real-time item availability and manage stock.
+  - Uncle Bob (Business Owner)
+    The executive stakeholder who reviews synthesized sales summaries and peak-hour performance dashboards.
+- External System Integrations
+  - PayNow Gateway:
+    An SGQR-based instant payment processor that the core system communicates with to initiate and confirm transactions using REST APIs and Webhooks.
+  - Credit Card Gateway:
+    A PCI-DSS compliant processor (such as Stripe) used to handle credit card payments via REST APIs and Webhooks.
+  - Power BI/ Tableau:
+    Off-the-shelf business intelligence platforms that connect directly to the system's database read replica via ODBC to extract transactional and revenue reporting data.
 
 Source file: [`diagrams/c1_system_context.mmd`](diagrams/c1_system_context.mmd)
 
