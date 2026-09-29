@@ -62,10 +62,21 @@ C4Context
 
 ### 1.2 C2 — Container Diagram
 
-Shows the technology stack choices: Customer Web App, KDS Web App,
-Manager Console, API Backend, and the Relational Database (plus a
-reporting read-replica for BI isolation).
-
+The diagram maps the internal technology stack, container architecture, and external integration points of the Grill & Go Ordering System.
+- Core Application Containers
+  - Customer Web App:
+    A React Single Page Application (SPA) accessed via a QR code scan, allowing customers to browse menus, customize orders,, and checkout via their mobile browser without installing an app. It communicates with backend via JSON/HTTPS REST.
+  - KDS Web App:
+    A React or Bue web application deployes on an Android tablet that displays paid orders and enables kitchen staff to update order statuses. It interfaces with the backend via JSON/HTTPS REST.
+  - Manager Console:
+    A web application utilized by store managers to toggle real-time stock availability. It also connects to the backend through JSON/HTTPS REST.
+  - API Backend:
+    Built with Node.js/Express (REST) or Java Spring Boot, this container manages core business logic including orders, menus, payments, authentication, and stock. It exposes REST endpoints to the frontend applications and reads/writes to the database using SQL/ORM.
+- Data Storage Layer
+  - Transactional Database:
+    A PostgreSQL database responsible for storing primary data structures, including tables for orders, order items, menu items, and payments
+  - Reporting Read Replica:
+    A secondary PostgreSQL database that continuously streams a replica from the Transactional Database. It is designed to isolate heavy business intelligence (BI) query loads from live transactional traffic.
 Source file: [`diagrams/c2_container_diagram.mmd`](diagrams/c2_container_diagram.mmd)
 
 ```mermaid
