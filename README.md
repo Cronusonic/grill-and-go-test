@@ -22,7 +22,7 @@ integration (Power BI / Tableau) against the transactional database.
 | Git Handle | Full Name | Primary Role | Key Contributions |
 | :--- | :--- | :--- | :--- |
 | `@studentA-analyst` | [Student A Name] | Lead Systems Analyst | User Requirements Specification, User Stories, Use Case Diagram, Client Sign-Off, RTM |
-| `@studentB-developer` | [Student B Name] | Software Architect / Lead Developer | C4 Architecture (C1/C2), Sequence Diagram, API Specifications |
+| `@tjonce567-arch` | [Trickzie Jenelle Alba Manabis] | Documentation Engineer | Translate complex software architectures and codebases into clear and comprehensive documentation. |
 | `@studentA-qa` | [Student A Name] | Integration & BI Specialist | Database Schema (ERD), NFRs, Power BI integration notes, QA review of both documents |
 
 > Each member commits under their own distinct Git account. Commit history
