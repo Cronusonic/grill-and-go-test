@@ -2,7 +2,7 @@
 ## Grill & Go — Digital Ordering & Fulfilment System
 
 **Client:** Uncle Bob, Owner, Grill & Go (Orchard Road, Singapore)
-**Prepared by:** [Student A Name], Lead Systems Analyst
+**Prepared by:** [Kaung Htat Lin], Systems Analyst
 **Document Version:** 1.0
 **Date:** October 2026
 
@@ -293,5 +293,5 @@ detailed within this User Requirements Specification (URS) document.
 
 | Approval Role | Stakeholder Name | Organization / Position | Approval Status | Timestamp (SGT) | Digital Sign-Off (Git ID) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Client / Business Owner** | Uncle Bob | Owner, Grill & Go (Orchard Road) | **APPROVED** | 2026-10-12 14:30 | `@studentA-analyst` |
-| **Lead Systems Analyst** | [Student A Name] | SE Solutions Project Lead | **APPROVED** | 2026-10-12 14:30 | `@studentA-analyst` |
+| **Client / Business Owner** | Uncle Bob | Owner, Grill & Go (Orchard Road) | **APPROVED** | 2026-10-12 14:30 | `@kaung` |
+| **Systems Analyst** | [Kaung Htat Lin] | SE Solutions Project Lead | **APPROVED** | 2026-10-12 14:30 | `@kaung` |
