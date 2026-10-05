@@ -2,7 +2,7 @@
 ## Grill & Go — Digital Ordering & Fulfilment System
 
 **Prepared by:** [Trickzie Jennelle Alba Manabis], Documentation Engineer
-**Reviewed by:** [Student C Name], Integration & BI Specialist
+**Reviewed by:** [Kaung Htat Lin], Integration & BI Specialist
 **Document Version:** 1.0
 **Date:** October 2026
 
