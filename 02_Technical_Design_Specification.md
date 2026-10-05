@@ -10,7 +10,8 @@
 ## System diagram
 The architecture shows a restaurant ordering system where customers use mobile devices to scan table QR codes, while staff use KDS and management consoles. Both connect to the App Server, which handles the application logic and APIs and communicates with the Database Server for orders, menus, and payments. Power BI/Tableau connects directly to the Database Server for reporting, dashboards, and business analysis.
 
-<img width="1536" height="1024" alt="Restaurant Software Architecture Flow" src="https://github.com/user-attachments/assets/6ebab1c1-72fa-4f51-952c-57cb76f866ec" />
+<img width="1536" height="1024" alt="Three-Tier System Architecture Infographic" src="https://github.com/user-attachments/assets/b2f09c5b-9f06-4ddf-a220-f76283951759" />
+
 
 ## 1. C4 Architecture Model
 
