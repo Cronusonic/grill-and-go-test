@@ -33,32 +33,10 @@ The diagram maps the architectural boundaries, user roles, and external software
   - Power BI/ Tableau:
     Off-the-shelf business intelligence platforms that connect directly to the system's database read replica via ODBC to extract transactional and revenue reporting data.
 
-Source file: <img width="1600" height="827" alt="e660fe10-d944-4a10-a13d-292af4bd153e" src="https://github.com/user-attachments/assets/e11f51fc-49a2-4eab-b0bc-76c40e6ce540" />
+Source file:
 
-```mermaid
-C4Context
-  title Grill & Go — System Context Diagram (C1)
+<img width="1600" height="827" alt="c1" src="https://github.com/user-attachments/assets/962d0a47-4f90-4935-85b6-20ce00dccbc8" />
 
-  Person(customer, "Customer", "Diner at a table, orders via mobile browser after scanning a table QR code")
-  Person(kitchen, "Kitchen Staff", "Prepares food, updates order status on a tablet (KDS)")
-  Person(manager, "Store Manager", "Manages menu availability and stock in real time")
-  Person(owner, "Uncle Bob", "Business owner, reviews sales & peak-hour performance")
-
-  System(orderingSystem, "Grill & Go Ordering System", "Allows customers to browse the menu, customize and pay for orders; lets kitchen staff fulfil orders and managers control stock availability")
-
-  System_Ext(paynow, "PayNow Gateway", "SGQR-based instant payment processor")
-  System_Ext(cardGateway, "Credit Card Gateway", "PCI-DSS compliant card payment processor (e.g. Stripe)")
-  System_Ext(biTool, "Power BI / Tableau", "Off-the-shelf BI tool connecting directly to the transactional database for revenue & peak-hour reporting")
-
-  Rel(customer, orderingSystem, "Scans QR, browses menu, customizes & pays for order", "HTTPS / Mobile Browser")
-  Rel(kitchen, orderingSystem, "Views paid orders, updates status", "HTTPS / Tablet (KDS)")
-  Rel(manager, orderingSystem, "Toggles item availability", "HTTPS / Tablet or Web")
-  Rel(orderingSystem, owner, "Surfaces sales summaries (via BI tool)")
-
-  Rel(orderingSystem, paynow, "Initiates & confirms PayNow payment", "REST/Webhook")
-  Rel(orderingSystem, cardGateway, "Initiates & confirms card payment", "REST/Webhook")
-  Rel(biTool, orderingSystem, "Reads transactional/reporting data directly", "ODBC / Read Replica")
-```
 
 ### 1.2 C2 — Container Diagram
 
