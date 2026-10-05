@@ -56,44 +56,8 @@ The diagram maps the internal technology stack, container architecture, and exte
   - Reporting Read Replica:
     A secondary PostgreSQL database that continuously streams a replica from the Transactional Database. It is designed to isolate heavy business intelligence (BI) query loads from live transactional traffic.
     
-Source file: [`diagrams/c2_container_diagram.mmd`](diagrams/c2_container_diagram.mmd)
-
-```mermaid
-C4Container
-  title Grill & Go — Container Diagram (C2)
-
-  Person(customer, "Customer", "Scans table QR code, orders via mobile browser")
-  Person(kitchen, "Kitchen Staff", "Uses tablet KDS")
-  Person(manager, "Store Manager", "Manages stock availability")
-
-  System_Boundary(orderingSystem, "Grill & Go Ordering System") {
-    Container(spa, "Customer Web App", "React SPA (served on QR scan)", "Menu browsing, customization, checkout - no install required")
-    Container(kds, "KDS Web App", "React/Vue Web App on Android Tablet", "Displays paid orders, allows status updates")
-    Container(managerApp, "Manager Console", "Web App (shared with KDS device or separate tablet)", "Toggle item stock availability in real time")
-    Container(api, "API Backend", "Node.js / Express (REST) or Java Spring Boot", "Business logic: orders, menu, payments, auth, stock; exposes REST endpoints")
-    ContainerDb(db, "Transactional Database", "PostgreSQL", "Stores tables, orders, order_items, menu_items, payments")
-    ContainerDb(dbReplica, "Reporting Read Replica", "PostgreSQL (read replica)", "Isolates BI query load from live transactional traffic")
-  }
-
-  System_Ext(paynow, "PayNow Gateway", "SGQR instant payment API")
-  System_Ext(cardGateway, "Credit Card Gateway", "PCI-DSS compliant processor")
-  System_Ext(biTool, "Power BI / Tableau", "Off-the-shelf BI tool")
-
-  Rel(customer, spa, "Uses", "HTTPS")
-  Rel(kitchen, kds, "Uses", "HTTPS")
-  Rel(manager, managerApp, "Uses", "HTTPS")
-
-  Rel(spa, api, "Places orders, requests menu", "JSON/HTTPS (REST)")
-  Rel(kds, api, "Polls/subscribes for paid orders, PATCHes status", "JSON/HTTPS (REST or WebSocket)")
-  Rel(managerApp, api, "PATCHes item availability", "JSON/HTTPS (REST)")
-
-  Rel(api, db, "Reads/Writes", "SQL / ORM")
-  Rel(db, dbReplica, "Streaming replication")
-  Rel(biTool, dbReplica, "Direct read-only query", "ODBC/JDBC")
-
-  Rel(api, paynow, "Creates payment request, receives webhook", "REST/Webhook")
-  Rel(api, cardGateway, "Creates charge, receives webhook", "REST/Webhook")
-```
+Source file: 
+<img width="1920" height="1080" alt="c2" src="https://github.com/user-attachments/assets/d4aa569b-d3a8-4d0e-980b-b9f70c6862a2" />
 
 ### 1.3 Technology Stack Justification
 
