@@ -131,12 +131,16 @@ C4Container
 
 ## 2. UML Sequence Diagram — Order Placement & PayNow Payment Flow
 
-This diagram shows the time-ordered interaction across all lifelines:
-Customer, Customer Web App, API Backend, Transactional DB, PayNow
-Gateway, KDS, and Kitchen Staff — including the asynchronous webhook
-callback from the payment gateway and the rule that **unpaid orders are
-never transmitted to the kitchen**.
+This diagram illustrates the sequential interactions among various system components involved in the order placement and payment process. The key actors include:
+- Customer
+- Customer Web App
+- API Backend
+- Transactional Database
+- PayNow Gateway
+- Kitchen Display System (KDS)
+- Kitchen Staff
 
+The diagram covers the time-ordered flow of actions from the customer initiating an order to confirming payment, interactions with external systems, including the PayNow payment gateway, the asynchronous web hook callback mechanism from the payment gateway (ensuring that all transactions are processed accurately), key business rules such as the stipulation that unpaid orders are not transmitted to the kitchen, and the visualization is essential for developers and stakeholders to understand the operational workflow and technical dependencies involved in the payment processing system.
 Source file: [`diagrams/sequence_order_payment.mmd`](diagrams/sequence_order_payment.mmd)
 
 ```mermaid
