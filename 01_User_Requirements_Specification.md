@@ -26,10 +26,10 @@ This document delineates the user-facing requirements for implementing a digital
 
 | Role | Description |
 | :--- | :--- |
-| Customer | Diner seated at a table who orders and pays via their own mobile browser |
-| Kitchen Staff | Uses a tablet (KDS) to view and progress paid orders |
-| Store Manager | Toggles menu item availability in real time |
-| Uncle Bob (Business Owner) | Reviews revenue and peak-hour performance via Power BI/Tableau |
+| Customer | A diner seated at a table who places orders and processes payments through their mobile browser. |
+| Kitchen Staff | Personal utilizing a tablet-based Kitchen Display System (KDS) to view and manage paid orders. |
+| Store Manager | Responsible for real-time adjustments to menu item availability based on stock levels. |
+| Uncle Bob (Business Owner) | Reviews revenue metrics and analyzes peak-hour performance through business intelligence tools such as Power BI for Tableau |
 
 ---
 
