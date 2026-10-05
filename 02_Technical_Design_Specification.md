@@ -11,9 +11,13 @@
 This diagram shows a 3-tier system architecture for a restaurant ordering system:
 
 Tier 1 – Presentation Layer: Customers, staff, and mobile devices access the system through a web browser or mobile app. Communication with the application server uses HTTPS/TLS over the Internet.
+
 Tier 2 – Application Layer: The cloud-based app server handles requests, APIs, authentication, and business logic. It communicates securely with Tier 3.
+
 Tier 3 – Data Layer: The database stores orders, menu, payment, and restaurant data. Power BI/Tableau connects to the database for reports and business analytics.
+
 Security & connectivity: HTTPS/TLS protects communication between users and the cloud application, while secure database connections protect application-to-database traffic.
+
 Cost: Power BI/Tableau are shown as suitable BI options for a small business, particularly for reporting and dashboards without building a separate analytics platform.
 
 <img width="1536" height="1024" alt="Three-Tier System Architecture Infographic" src="https://github.com/user-attachments/assets/b2f09c5b-9f06-4ddf-a220-f76283951759" />
