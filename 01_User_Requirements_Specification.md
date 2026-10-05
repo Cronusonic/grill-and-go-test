@@ -2,7 +2,9 @@
 ## Grill & Go — Digital Ordering & Fulfilment System
 
 **Client:** Uncle Bob, Owner, Grill & Go (Orchard Road, Singapore)
-**Prepared by:** [Kaung Htat Lin], Systems Analyst
+**Prepared by:** 
+[Kaung Htat Lin], Systems Analyst
+[Trickzie Jennelle Alba Manabis], Documentation Engineer
 **Document Version:** 1.0
 **Date:** October 2026
 
@@ -10,27 +12,15 @@
 
 ## 1. Introduction & Business Context
 
-Grill & Go is a small-business Western food stall serving approximately
-30,000 unique customer orders per month (~1,000 orders/day), with sharp
-demand peaks during lunch (12PM–2PM) and dinner (6PM–9PM) service. Long
-physical queues during these peaks are causing customer drop-off and
-kitchen delays.
+Grill & Go operates as a small-business Western food stall that expertly caters to approximately 30,000 distinct customer orders each month, translating to an average of 1,000 orders per day. Notably, the stall experiences significant demand surges during peak service hours, specifically lunch (12 PM to 2PM) and dinner (6 PM to 9 PM). This influx of customers often results in lengthy physical queues, which in turn leads to both customer abandonment and operational delays within the kitchen.
 
-This document specifies the user-facing requirements for a digital
-ordering and fulfilment system that allows customers to order and pay
-from their table via a QR code, routes only paid orders to the kitchen,
-gives kitchen staff a digital order queue, and gives the Store Manager
-real-time control over menu stock availability.
+This document delineates the user-facing requirements for implementing a digital ordering and fulfillment system designed to enhance customer experience. The proposed system will enable patrons to place orders and make payments directly from their tables using a QR code. It will also ensure that only those orders that have been paid for are relayed to the kitchen, thereby streamlining operations. Furthermore, the system will provide kitchen staff with a digital order queue for efficient processing and will enable the Store Manager to maintain real-time oversight of menu stock availability.
 
 ### 1.1 Scope
 
-In scope: customer self-ordering via mobile browser, mandatory
-pre-kitchen payment (PayNow / Credit Card), Kitchen Display System (KDS)
-workflow, real-time stock toggling, and read-only BI integration
-(Power BI / Tableau) against the transactional database.
+- In Scope: The project encompasses several critical functionalities, including customer self-ordering via mobile web browsers, a mandatory pre-kitchen payment method (via PayNow or credit card), the establishment of a Kitchen Display System (KDS) workflow, real-time toggling of stock availability, and integration with business intelligence tools (Power BI / Tableau) for read-only access to the transactional database.
 
-Out of scope: native mobile apps, loyalty/rewards programs, third-party
-delivery platform integration, and staff scheduling/payroll.
+- Out of Scope: Notable excluded from this project are the development of native mobile applications, the implementation of loyalty and rewards programs, integration with third-party delivery platforms, and any features related to staff scheduling or payroll management.
 
 ### 1.2 Stakeholders
 
