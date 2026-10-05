@@ -295,3 +295,5 @@ detailed within this User Requirements Specification (URS) document.
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Client / Business Owner** | Uncle Bob | Owner, Grill & Go (Orchard Road) | **APPROVED** | 2026-10-12 14:30 | `@kaung` |
 | **Systems Analyst** | [Kaung Htat Lin] | SE Solutions Project Lead | **APPROVED** | 2026-10-12 14:30 | `@kaung` |
+| **Documentation Engineer** | [Trickzie Jennelle Alba Manabis] | SE Solutions Project Co-Lead | **APPROVED** | 2026-10-12 14:30 | `@tjonce567-arch` |
+
