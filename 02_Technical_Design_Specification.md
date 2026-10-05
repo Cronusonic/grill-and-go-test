@@ -412,5 +412,5 @@ to 30,000 monthly transactions, and approved for implementation.
 | Approval Role | Engineer Name | Project Role | Approval Status | Timestamp (SGT) | Digital Sign-Off (Git ID) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Lead Systems Analyst** | [Student A Name] | Systems Analyst / Author | **APPROVED** | 2026-10-12 16:00 | `@studentA-analyst` |
-| **Lead Software Engineer** | [Student B Name] | Software Architect / Lead Developer | **APPROVED** | 2026-10-12 16:15 | `@studentB-developer` |
+| **Documentation Engineer** | [Trickzie Jennelle Alba Manabis] | SE Solutions Project Co-Lead | **APPROVED** | 2026-10-12 14:30 | `@tjonce567-arch` |
 | **QA & Data Engineer** | [Student A Name] | Integration & BI Specialist | **APPROVED** | 2026-10-12 16:30 | `@studentA-qa` |
