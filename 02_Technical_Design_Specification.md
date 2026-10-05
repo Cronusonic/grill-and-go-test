@@ -200,6 +200,14 @@ sequenceDiagram
 ---
 
 ## 3. Database Schema (Entity-Relationship Diagram)
+This diagram provides a comprehensive overview of the database schema for the application, illustrating the relationships between various entities involved in the order management system. Key components include:
+- Menu_Items: Represents food and beverage options available for selection.
+- Orders: Tracks individual customer orders, detailing items purchased and overall status.
+- Order_Items: Connects specific menu items to a particular order.
+- Payments: Manages payment transactions associated with orders.
+
+Each table's cardinality is clearly outlined, indicating how entities interact. For instance, a single table can host multiple orders, while each order must contain at least one item. Hierarchical connections such as one-to-many (1:N) and many-to-one (N:1) relationships are specified, clarifying how data can be navigated across the schema. 
+This diagram is crucial for database administrators and developers, serving as a blueprint for implementing and managing the system's data architecture, ensuring that all entities are properly linked and maintain integrity.
 
 Source file: [`diagrams/erd_database_schema.mmd`](diagrams/erd_database_schema.mmd)
 
