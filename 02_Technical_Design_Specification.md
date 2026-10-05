@@ -33,7 +33,7 @@ The diagram maps the architectural boundaries, user roles, and external software
   - Power BI/ Tableau:
     Off-the-shelf business intelligence platforms that connect directly to the system's database read replica via ODBC to extract transactional and revenue reporting data.
 
-Source file: [`diagrams/c1_system_context.mmd`](diagrams/c1_system_context.mmd)
+Source file: <img width="1600" height="827" alt="e660fe10-d944-4a10-a13d-292af4bd153e" src="https://github.com/user-attachments/assets/e11f51fc-49a2-4eab-b0bc-76c40e6ce540" />
 
 ```mermaid
 C4Context
