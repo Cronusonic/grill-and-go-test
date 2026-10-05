@@ -1,7 +1,7 @@
 # Technical Design Specification (TDS)
 ## Grill & Go — Digital Ordering & Fulfilment System
 
-**Prepared by:** [Student B Name], Software Architect / Lead Developer
+**Prepared by:** [Trickzie Jennelle Alba Manabis], Documentation Engineer
 **Reviewed by:** [Student C Name], Integration & BI Specialist
 **Document Version:** 1.0
 **Date:** October 2026
